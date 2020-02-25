@@ -1,6 +1,17 @@
+//welcome to my mess
 // for // check every box then
 //if click add class
 $(document).ready(function() { //it will run when the document is ready
+
+  let player = true;
+
+////calls all the divs/////
+  // const test1 = $('.smallbox').map(function() {
+  //   return this.id;
+  // }).get();
+  // console.log(test1);
+  // console.log(test1[2]);
+  // console.log(typeof test1);
 
   const square1 = $('box1');
   const square2 = $('box2');
@@ -12,9 +23,23 @@ $(document).ready(function() { //it will run when the document is ready
   const square8 = $('box8');
   const square9 = $('box9');
 
+  const turns = function() {
+    if (player === true) {
+      player = false;
+      $('#box1').addClass('selectedRed');
+      $('p').html("It's player red's turn!");
+      console.log(`it's player one's turn`);
+    } else {
+      player = true;
+      $('#box1').addClass('selectedBlue');
+      $('p').html("It's player blue's turn!");
+      console.log(`it's player two's turn`);
+    }
+  }
+
 //if box[i] then click but thats for later
   $('#box1').click(function() {
-    $(this).addClass('selectedRed');
+    turns();
   });
   $('#box2').click(function() {
     $(this).addClass('selectedRed');
@@ -55,6 +80,19 @@ for (let i = 0; i < 9; i++) {
     console.log(`the counter is at ${turnCounter} and is odd`);
   }
 }
+
+// winningarray
+const winningBoxes = [
+  [0,1,2],
+  [3,4,5],
+  [6,7,8],
+  [0,3,6],
+  [1,4,7],
+  [2,5,8],
+  [0,4,8],
+  [2,4,6]
+];
+
 
 
 });
