@@ -16,8 +16,20 @@ $(document).ready(function() { //it will run when the document is ready
   $('.smallbox').click(function(){
     const indexX = $('.smallbox').index(this);
     console.log(`index is ${indexX}`);
+    if (player === true) {
+      player = false;
+      $(this).addClass('selectedRed');
+      $('p').html("It's player red's turn!");
+      console.log(`it's player one's turn`);
+    } else {
+      player = true;
+      $(this).addClass('selectedBlue');
+      $('p').html("It's player blue's turn!");
+      console.log(`it's player two's turn`);
+    }
   });
 
+///original divs/////
   // const square1 = $('box1');
   // const square2 = $('box2');
   // const square3 = $('box3');
@@ -28,63 +40,65 @@ $(document).ready(function() { //it will run when the document is ready
   // const square8 = $('box8');
   // const square9 = $('box9');
 
-  const turns = function() {
-    if (player === true) {
-      player = false;
-      $('#box1').addClass('selectedRed');
-      $('p').html("It's player red's turn!");
-      console.log(`it's player one's turn`);
-    } else {
-      player = true;
-      $('#box1').addClass('selectedBlue');
-      $('p').html("It's player blue's turn!");
-      console.log(`it's player two's turn`);
-    }
-  }
+  //OG TURNS FUNCTION
+    // const turns = function() {
+    //   if (player === true) {
+    //     player = false;
+    //     $('#box1').addClass('selectedRed');
+    //     $('p').html("It's player red's turn!");
+    //     console.log(`it's player one's turn`);
+    //   } else {
+    //     player = true;
+    //     $('#box1').addClass('selectedBlue');
+    //     $('p').html("It's player blue's turn!");
+    //     console.log(`it's player two's turn`);
+    //   }
+    // }
 
+////original clicky add class////
 //if box[i] then click but thats for later
-  $('#box1').click(function() {
-    turns();
-  });
-  $('#box2').click(function() {
-    $(this).addClass('selectedRed');
-  });
-  $('#box3').click(function() {
-    $(this).addClass('selectedRed');
-  });
-  $('#box4').click(function() {
-    $(this).addClass('selectedRed');
-  });
-  $('#box5').click(function() {
-    $(this).addClass('selectedRed');
-  });
-  $('#box6').click(function() {
-    $(this).addClass('selectedRed');
-  });
-  $('#box7').click(function() {
-    $(this).addClass('selectedRed');
-  });
-  $('#box8').click(function() {
-    $(this).addClass('selectedRed');
-  });
-  $('#box9').click(function() {
-    $(this).addClass('selectedRed');
-  });
+  // $('#box1').click(function() {
+  //   turns();
+  // });
+  // $('#box2').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  // $('#box3').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  // $('#box4').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  // $('#box5').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  // $('#box6').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  // $('#box7').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  // $('#box8').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  // $('#box9').click(function() {
+  //   $(this).addClass('selectedRed');
+  // });
+  //
+  // $('.reset').click(function() {
+  //   $('.smallbox').removeClass('selectedRed');
+  // });
 
-  $('.reset').click(function() {
-    $('.smallbox').removeClass('selectedRed');
-  });
-
-let turnCounter = 0;
-for (let i = 0; i < 9; i++) {
-  turnCounter = i%2;
-  console.log(`i is at ${i}`);
-  if (turnCounter === 0) {
-    console.log(`the counter is at ${turnCounter} and is even`);
-  } else if (turnCounter === 1) {
-    console.log(`the counter is at ${turnCounter} and is odd`);
-  }
-}
+// let turnCounter = 0;
+// for (let i = 0; i < 9; i++) {
+//   turnCounter = i%2;
+//   console.log(`i is at ${i}`);
+//   if (turnCounter === 0) {
+//     console.log(`the counter is at ${turnCounter} and is even`);
+//   } else if (turnCounter === 1) {
+//     console.log(`the counter is at ${turnCounter} and is odd`);
+//   }
+// }
 
 // winningarray
 const winningBoxes = [
