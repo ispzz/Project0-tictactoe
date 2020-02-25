@@ -22,3 +22,11 @@
 .selectedBlue {
   background-color: blue;
 }
+
+h1 {
+  font-family: 'Orbitron', Verdana;
+}
+
+.reset {
+  font-family: 'Oxanium', Verdana;
+}

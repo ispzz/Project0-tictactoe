@@ -45,7 +45,7 @@ $(document).ready(function() { //it will run when the document is ready
     $('.smallbox').removeClass('selectedRed');
   });
 
-const counter = 0;
+let turnCounter = 0;
 for (let i = 0; i < 9; i++) {
   turnCounter = i%2;
   console.log(`i is at ${i}`);
