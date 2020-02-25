@@ -1,0 +1,24 @@
+.container {
+  width: 45%;
+  height: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.smallbox {
+  width: 32%;
+  padding-bottom: 32%; /* Same as width, sets height */
+  margin-bottom: 2%; /* (100-32*3)/2 */
+  position: relative;
+  border: 2px solid black;
+}
+
+.selectedRed {
+  background-color: red;
+}
+
+.selectedBlue {
+  background-color: blue;
+}
