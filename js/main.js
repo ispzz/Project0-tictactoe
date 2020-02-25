@@ -6,22 +6,27 @@ $(document).ready(function() { //it will run when the document is ready
   let player = true;
 
 ////calls all the divs/////
-  // const test1 = $('.smallbox').map(function() {
-  //   return this.id;
-  // }).get();
-  // console.log(test1);
-  // console.log(test1[2]);
-  // console.log(typeof test1);
+  const test1 = $('.smallbox').map(function() {
+    return this.id;
+  }).get();
+  console.log(test1);
+  console.log(test1[2]);
+  console.log(typeof test1);
 
-  const square1 = $('box1');
-  const square2 = $('box2');
-  const square3 = $('box3');
-  const square4 = $('box4');
-  const square5 = $('box5');
-  const square6 = $('box6');
-  const square7 = $('box7');
-  const square8 = $('box8');
-  const square9 = $('box9');
+  $('.smallbox').click(function(){
+    const indexX = $('.smallbox').index(this);
+    console.log(`index is ${indexX}`);
+  });
+
+  // const square1 = $('box1');
+  // const square2 = $('box2');
+  // const square3 = $('box3');
+  // const square4 = $('box4');
+  // const square5 = $('box5');
+  // const square6 = $('box6');
+  // const square7 = $('box7');
+  // const square8 = $('box8');
+  // const square9 = $('box9');
 
   const turns = function() {
     if (player === true) {
