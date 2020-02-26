@@ -19,29 +19,49 @@ $(document).ready(function() {
     [2,4,6]
   ];
 
+  const checkWinner = function() {
+    for(let i = 0; i < winningBoxes.length; i++) {
+      const currentArr = winningBoxes[i];
+      if (currentArr !== "") {
+        if (board[currentArr[0]] === board[currentArr[1]] && board[currentArr[1]] === board[currentArr[2]] && board[currentArr[0]] !== "") {
+          console.log('a winner has been found lol(but who)');
+        }
+      } //END CUREEN !""
+      if (!board.includes("")) {
+        console.log('tie??');
+      }
+    }//END FOR LOOP
+  };// END checkWinner
+
+
   //-IDK CALLING THE INDEX OF THE DIVS?-//
   const test1 = $('.smallbox').map(function() {
     return this.id;
   }).get();
 
   //-CLICKING + PLAYER TURNS-//
-  //how to only let it select boxes without class(?)
   $('.smallbox').click(function() {
     const indexX = $('.smallbox').index(this);
     //testing if it gets the right index of each box
     console.log(`index is ${indexX}`);
-    if (player === true) {
-      player = false;
-      board[indexX] = 'X';
-      $(this).addClass('selectedRed');
-      $('p').html("It's player red's turn!");
-      console.log(`it's player one's turn`); //test
+    if (board[indexX] === "") {
+      if (player === true) {
+        player = false;
+        board[indexX] = 'X';
+        $(this).addClass('selectedRed');
+        $('p').html("It's player red's turn!");
+        console.log(`it's player one's turn`); //test
+        checkWinner();
+      } else {
+        player = true;
+        board[indexX] = 'O';
+        $(this).addClass('selectedBlue');
+        $('p').html("It's player blue's turn!");
+        console.log(`it's player two's turn`); //test
+        checkWinner();
+      }
     } else {
-      player = true;
-      board[indexX] = 'O';
-      $(this).addClass('selectedBlue');
-      $('p').html("It's player blue's turn!");
-      console.log(`it's player two's turn`); //test
+      console.log('try another box');
     }
   });
 
@@ -58,6 +78,9 @@ $(document).ready(function() {
   $('.test').click(function() {
     console.log(board);
   });
+
+  //if indexX[] = what??
+  //for something?.length === 3?? win
 
 //-END-//
 });
