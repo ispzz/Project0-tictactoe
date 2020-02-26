@@ -1,6 +1,9 @@
+/* * {
+  border: 1px solid black;
+} */
 body {
   margin: 0;
-  border: 1em solid black;
+  border: 1em solid pink;
 }
 
 .container {
@@ -17,7 +20,7 @@ body {
   padding-bottom: 32%; /* Same as width, sets height */
   margin-bottom: 2%; /* (100-32*3)/2 */
   position: relative;
-  border: 2px solid black;
+  border: 3px solid purple;
 }
 
 .selectedRed {
@@ -31,7 +34,15 @@ body {
 h1 {
   font-family: 'Orbitron', Verdana;
   text-align: center;
-  text-shadow: 2px 2px red;
+  text-shadow: 2px 3px purple;
+  font-size: 3em;
+  margin: auto;
+  padding: 0.3em;
+  background-color: pink;
+}
+
+.buttonDiv {
+  text-align: center;
 }
 
 .reset {
