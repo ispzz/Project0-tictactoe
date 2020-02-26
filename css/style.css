@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  border: 1em solid black;
+}
+
 .container {
   width: 45%;
   height: 45%;
@@ -26,6 +31,7 @@
 h1 {
   font-family: 'Orbitron', Verdana;
   text-align: center;
+  text-shadow: 2px 2px red;
 }
 
 .reset {
