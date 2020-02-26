@@ -6,8 +6,8 @@
 $(document).ready(function() {
 
   //-DECLARING VARIABLES-//
-  let player = true;
-  const board = ['','','','','','','','',''];
+  let player = true; // RED X = true, BLUE O = false
+  let board = ['','','','','','','','',''];
   const winningBoxes = [
     [0,1,2],
     [3,4,5],
@@ -19,14 +19,15 @@ $(document).ready(function() {
     [2,4,6]
   ];
 
-  const checkWinner = function() {
+  const checkWinner = function(player) {
     for(let i = 0; i < winningBoxes.length; i++) {
       const currentArr = winningBoxes[i];
       if (currentArr !== "") {
-        if (board[currentArr[0]] === board[currentArr[1]] && board[currentArr[1]] === board[currentArr[2]] && board[currentArr[0]] !== "") {
-          console.log('a winner has been found lol(but who)');
+        if (board[currentArr[0]] === board[currentArr[1]] && board[currentArr[1]] === board[currentArr[2]] && board[currentArr[0]] === player) {
+          console.log(`Player ${player} has won`);
+          restart();
         }
-      } //END CUREEN !""
+      } //END CURENT !""
       if (!board.includes("")) {
         console.log('tie??');
       }
@@ -51,14 +52,14 @@ $(document).ready(function() {
         $(this).addClass('selectedRed');
         $('p').html("It's player red's turn!");
         console.log(`it's player one's turn`); //test
-        checkWinner();
+        checkWinner('X');
       } else {
         player = true;
         board[indexX] = 'O';
         $(this).addClass('selectedBlue');
         $('p').html("It's player blue's turn!");
         console.log(`it's player two's turn`); //test
-        checkWinner();
+        checkWinner('O');
       }
     } else {
       console.log('try another box');
@@ -69,8 +70,17 @@ $(document).ready(function() {
   $('.reset').click(function() {
     $('.smallbox').removeClass('selectedRed');
     $('.smallbox').removeClass('selectedBlue');
-    $('p').remove();
+    $('p').html(" ");
+    board = ['','','','','','','','',''];
   });
+
+  //-PLAY AGAIN-//
+  const restart = function() {
+    $('.smallbox').removeClass('selectedRed');
+    $('.smallbox').removeClass('selectedBlue');
+    $('p').html(" ");
+    board = ['','','','','','','','',''];
+  };
 
   //-TEST-//
   console.log(test1);
@@ -79,8 +89,6 @@ $(document).ready(function() {
     console.log(board);
   });
 
-  //if indexX[] = what??
-  //for something?.length === 3?? win
 
 //-END-//
 });
