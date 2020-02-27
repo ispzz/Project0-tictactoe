@@ -5,6 +5,8 @@
 //-DOCUMENT READY-//
 $(document).ready(function() {
 
+$('.reset').addClass('gradient-animate');
+
   //-DECLARING VARIABLES-//
   let player = true; // RED X = true, BLUE O = false
   let board = ['','','','','','','','',''];
@@ -26,16 +28,17 @@ $(document).ready(function() {
       const currentArr = winningBoxes[i];
       if (currentArr !== "") {
         if (board[currentArr[0]] === board[currentArr[1]] && board[currentArr[1]] === board[currentArr[2]] && board[currentArr[0]] === player) {
-          console.log(`Player ${player} has won`);
-          $('.message').html(`Player ${player} has won`);
-          $('.play-again').html(`Please click reset to play again!`);
+          console.log(`${player} is the winner!!`);
+          $('.message').html(`${player} is the winner!!`);
+          $('.message-div').addClass('appear-message');
+          $('#reset-text').text("PLAY AGAIN");
           win = true;
         }
       } //END CURENT !""
       if (!board.includes("")) {
         console.log('tie??');
         $('.message').html(`TIE!! TRY AGAIN`);
-        $('.play-again').html(`Please click reset to play again!`);
+        $('#reset-text').text("PLAY AGAIN 😸");
         tie = true;
       }
     }//END FOR LOOP
@@ -56,22 +59,24 @@ $(document).ready(function() {
     if (board[indexX] === "") {
       if (player === true) {
         player = false;
-        board[indexX] = 'X';
+        board[indexX] = 'Socks';
+        $(this).css('background-image', 'url(images/socks-paw.png)')
         $(this).addClass('selectedRed');
         $('.socks-box').css('background', 'rgba(247,210,200,0.6)');
+        $('.socks-box').effect('bounce', { times: 2 }, 'slow');
         $('.boots-box').css('background-color', 'white');
-        $('.message').html("It's player red's turn!");
         console.log(`it's player one's turn`); //test
-        checkWinner('X');
+        checkWinner('Socks');
       } else {
         player = true;
-        board[indexX] = 'O';
-        $(this).addClass('selectedBlue');
+        board[indexX] = 'Boots';
+        $(this).css('background-image', 'url(images/booty-paw.png)');
+        $(this).addClass('selectedRed');
+        $('.boots-box').effect('bounce', { times: 2 }, 'slow');
         $('.boots-box').css('background', 'rgba(202,243,220,0.6)');
         $('.socks-box').css('background-color', 'white');
-        $('.message').html("It's player blue's turn!");
         console.log(`it's player two's turn`); //test
-        checkWinner('O');
+        checkWinner('Boots');
       }
     } else {
       console.log('try another box');
@@ -82,9 +87,10 @@ $(document).ready(function() {
   //-RESET-//  //-PLAY AGAIN-//
   $('.reset').click(function() {
     $('.smallbox').removeClass('selectedRed');
-    $('.smallbox').removeClass('selectedBlue');
+    $('.smallbox').css('background-image', '');
     $('.message').html(" ");
     $('.play-again').html(" ");
+    $('.message-div').removeClass('appear-message');
     $('.boots-box, .socks-box').css('background', 'rgba(255,255,255,0.2)');
     board = ['','','','','','','','',''];
     win = false;
