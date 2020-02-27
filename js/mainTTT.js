@@ -8,6 +8,8 @@ $(document).ready(function() {
   //-DECLARING VARIABLES-//
   let player = true; // RED X = true, BLUE O = false
   let board = ['','','','','','','','',''];
+  let win = false;
+  let tie = false;
   const winningBoxes = [
     [0,1,2],
     [3,4,5],
@@ -26,11 +28,15 @@ $(document).ready(function() {
         if (board[currentArr[0]] === board[currentArr[1]] && board[currentArr[1]] === board[currentArr[2]] && board[currentArr[0]] === player) {
           console.log(`Player ${player} has won`);
           $('.message').html(`Player ${player} has won`);
+          $('.play-again').html(`Please click reset to play again!`);
+          win = true;
         }
       } //END CURENT !""
       if (!board.includes("")) {
         console.log('tie??');
         $('.message').html(`TIE!! TRY AGAIN`);
+        $('.play-again').html(`Please click reset to play again!`);
+        tie = true;
       }
     }//END FOR LOOP
   };// END checkWinner
@@ -46,12 +52,13 @@ $(document).ready(function() {
     const indexX = $('.smallbox').index(this);
     //testing if it gets the right index of each box
     console.log(`index is ${indexX}`);
+    if (!win && !tie) {
     if (board[indexX] === "") {
       if (player === true) {
         player = false;
         board[indexX] = 'X';
         $(this).addClass('selectedRed');
-        $('.socks-box').css('background-color', 'red');
+        $('.socks-box').css('background', 'rgba(247,210,200,0.6)');
         $('.boots-box').css('background-color', 'white');
         $('.message').html("It's player red's turn!");
         console.log(`it's player one's turn`); //test
@@ -60,7 +67,7 @@ $(document).ready(function() {
         player = true;
         board[indexX] = 'O';
         $(this).addClass('selectedBlue');
-        $('.boots-box').css('background-color', 'blue');
+        $('.boots-box').css('background', 'rgba(202,243,220,0.6)');
         $('.socks-box').css('background-color', 'white');
         $('.message').html("It's player blue's turn!");
         console.log(`it's player two's turn`); //test
@@ -69,17 +76,20 @@ $(document).ready(function() {
     } else {
       console.log('try another box');
     }
+  } else $('.reset').effect("shake");
   });
 
-  //-RESET-//
+  //-RESET-//  //-PLAY AGAIN-//
   $('.reset').click(function() {
     $('.smallbox').removeClass('selectedRed');
     $('.smallbox').removeClass('selectedBlue');
     $('.message').html(" ");
+    $('.play-again').html(" ");
+    $('.boots-box, .socks-box').css('background', 'rgba(255,255,255,0.2)');
     board = ['','','','','','','','',''];
+    win = false;
+    tie = false;
   });
-
-  //-PLAY AGAIN-//
 
   //-TEST-//
   console.log(test1);

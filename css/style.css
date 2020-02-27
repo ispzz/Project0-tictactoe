@@ -8,27 +8,43 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  border: 1em solid pink;
+  border: 0.5em solid #e8c9f4;
+  background:
+    radial-gradient(#e8c9f4 3px, transparent 4px),
+    radial-gradient(#e8c9f4 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #e8c9f4 75px, #e8c9f4 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #e8c9f4 76px, #e8c9f4 77px, transparent 78px, transparent 109px),
+    #fff;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+};
 }
 
 header, footer {
-  background: rgba(0,0,0,0.18);
+  background-color:rgba(0,0,0,0.18);
 }
 
 header {
   height: 15vh;
-  border-radius: 20px 20px 0 0;
+  background: linear-gradient(90deg, rgba(247,210,200,1) 0%, rgba(232,201,244,1) 47%, rgba(202,243,220,1) 100%);
+  border-radius: 0px 0px 1em 1em;
+  margin: 10px;
 }
 
 footer {
   padding: 1vh;
-    border-radius: 0 0 20px 20px;
+  background: linear-gradient(90deg, rgba(247,210,200,1) 0%, rgba(232,201,244,1) 47%, rgba(202,243,220,1) 100%);
+  border-radius: 1em 1em 0 0;
+  margin: 10px;
 }
 
 h1 {
   font-family: 'Orbitron', Verdana;
-  font-size: 6vh;
+  font-size: 6.5vh;
   text-align: center;
+  color: white;
+  text-shadow: -2px 4px black;
 }
 
 main {
@@ -39,7 +55,6 @@ main {
 aside {
   width: 25vw;
   padding: 10px;
-  background: #808080;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -84,11 +99,27 @@ aside {
 }
 
 .socks-box {
-  background-color: white;
+  border: 0.5em solid #f7d2c8;
+  background: rgba(255,255,255,0.2);
 }
 
 .boots-box {
-  background-color: white;
+  border: 0.5em solid #caf3dc;
+  background: rgba(255,255,255,0.2);
+}
+
+/* **GAME CORNERS** */
+#box1 {
+  border-radius: 1em 0 0 0;
+}
+#box3 {
+  border-radius: 0 1em 0 0;
+}
+#box7 {
+  border-radius: 0 0 0 1em;
+}
+#box9 {
+  border-radius: 0 0 1em 0;
 }
 
 /* **JAVASCRIPT** */
@@ -102,4 +133,8 @@ aside {
 
 .selectedBlue {
   background-color: blue;
+}
+
+.reset {
+  background-color: red;
 }
