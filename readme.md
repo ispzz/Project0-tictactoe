@@ -18,6 +18,6 @@ The player is automatically assigned a character(Socks or Boots) depending on wh
 
 The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
-## Known bugs
+#### Known bugs
 
 - certain tie combinations wont display the border for the tie message.
