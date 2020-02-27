@@ -32,6 +32,7 @@ $(document).ready(function() {
       if (!board.includes("")) {
         console.log('tie??');
         $('.message').html(`TIE!! TRY AGAIN`);
+        $('.message-div').addClass('appear-message');
         $('#reset-text').text("PLAY AGAIN");
         $('header, footer').addClass('gradient-animate');
         tie = true;

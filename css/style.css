@@ -22,16 +22,17 @@ body {
 header, footer {
   background-color:rgba(0,0,0,0.18);
   background: linear-gradient(90deg, rgba(247,210,200,1) 0%, rgba(232,201,244,1) 47%, rgba(202,243,220,1) 100%);
-  border-radius: 0px 0px 1em 1em;
   margin: 10px;
 }
 
 header {
   height: 15vh;
+  border-radius: 0 0 1em 1em;
 }
 
 footer {
   padding: 1vh;
+  border-radius: 1em 1em 0 0;
 }
 
 h1 {
