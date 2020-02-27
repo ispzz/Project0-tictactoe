@@ -5,23 +5,14 @@
 //-DOCUMENT READY-//
 $(document).ready(function() {
 
-$('.reset').addClass('gradient-animate');
+  $('.reset').addClass('gradient-animate');
 
   //-DECLARING VARIABLES-//
-  let player = true; // RED X = true, BLUE O = false
+  let player = true; // socks = true, boots = false
   let board = ['','','','','','','','',''];
   let win = false;
   let tie = false;
-  const winningBoxes = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6]
-  ];
+  const winningBoxes = [ [0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6] ];
 
   const checkWinner = function(player) {
     for(let i = 0; i < winningBoxes.length; i++) {
@@ -32,13 +23,15 @@ $('.reset').addClass('gradient-animate');
           $('.message').html(`${player} is the winner!!`);
           $('.message-div').addClass('appear-message');
           $('#reset-text').text("PLAY AGAIN");
+          $('header, footer').addClass('gradient-animate');
           win = true;
         }
       } //END CURENT !""
       if (!board.includes("")) {
         console.log('tie??');
         $('.message').html(`TIE!! TRY AGAIN`);
-        $('#reset-text').text("PLAY AGAIN 😸");
+        $('#reset-text').text("PLAY AGAIN");
+        $('header, footer').addClass('gradient-animate');
         tie = true;
       }
     }//END FOR LOOP
