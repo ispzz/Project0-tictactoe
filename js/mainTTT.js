@@ -25,7 +25,7 @@ $(document).ready(function() {
       if (currentArr !== "") {
         if (board[currentArr[0]] === board[currentArr[1]] && board[currentArr[1]] === board[currentArr[2]] && board[currentArr[0]] === player) {
           console.log(`Player ${player} has won`);
-          restart();
+          $('.message').html(`Player ${player} has won`);
         }
       } //END CURENT !""
       if (!board.includes("")) {
@@ -50,14 +50,14 @@ $(document).ready(function() {
         player = false;
         board[indexX] = 'X';
         $(this).addClass('selectedRed');
-        $('p').html("It's player red's turn!");
+        $('.message').html("It's player red's turn!");
         console.log(`it's player one's turn`); //test
         checkWinner('X');
       } else {
         player = true;
         board[indexX] = 'O';
         $(this).addClass('selectedBlue');
-        $('p').html("It's player blue's turn!");
+        $('.message').html("It's player blue's turn!");
         console.log(`it's player two's turn`); //test
         checkWinner('O');
       }
@@ -75,19 +75,9 @@ $(document).ready(function() {
   });
 
   //-PLAY AGAIN-//
-  const restart = function() {
-    $('.smallbox').removeClass('selectedRed');
-    $('.smallbox').removeClass('selectedBlue');
-    $('p').html(" ");
-    board = ['','','','','','','','',''];
-  };
 
   //-TEST-//
   console.log(test1);
-
-  $('.test').click(function() {
-    console.log(board);
-  });
 
 
 //-END-//
