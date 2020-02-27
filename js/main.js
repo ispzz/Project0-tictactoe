@@ -30,7 +30,6 @@ $(document).ready(function() {
       };
 
       if (!board.includes("")) {
-        console.log('tie??');
         $('.message').html(`TIE!! TRY AGAIN`);
         $('.message-div').addClass('appear-message');
         $('#reset-text').text("PLAY AGAIN");
@@ -57,7 +56,7 @@ $(document).ready(function() {
             player = false;
             board[indexX] = 'Socks';
             $(this).css('background-image', 'url(images/socks-paw.png)')
-            $(this).addClass('selectedRed');
+            $(this).addClass('bg-paw-box');
             $('.socks-box').css('background', 'rgba(247,210,200,0.6)');
             $('.socks-box').effect('bounce', { times: 2 }, 'slow');
             $('.boots-box').css('background-color', 'white');
@@ -66,7 +65,7 @@ $(document).ready(function() {
             player = true;
             board[indexX] = 'Boots';
             $(this).css('background-image', 'url(images/booty-paw.png)');
-            $(this).addClass('selectedRed');
+            $(this).addClass('bg-paw-box');
             $('.boots-box').effect('bounce', { times: 2 }, 'slow');
             $('.boots-box').css('background', 'rgba(202,243,220,0.6)');
             $('.socks-box').css('background-color', 'white');
@@ -82,7 +81,7 @@ $(document).ready(function() {
 
   //-RESET-&&-PLAY AGAIN-//
   $('.reset').click(function() {
-    $('.smallbox').removeClass('selectedRed');
+    $('.smallbox').removeClass('bg-paw-box');
     $('header, footer').removeClass('gradient-animate');
     $('.smallbox').css('background-image', '');
     $('.message').html(" ");
