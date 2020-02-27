@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  /* border: 1px solid black; */
 }
 
 body {
@@ -18,25 +17,21 @@ body {
     #fff;
     background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
     background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
-};
 }
 
 header, footer {
   background-color:rgba(0,0,0,0.18);
-}
-
-header {
-  height: 15vh;
   background: linear-gradient(90deg, rgba(247,210,200,1) 0%, rgba(232,201,244,1) 47%, rgba(202,243,220,1) 100%);
   border-radius: 0px 0px 1em 1em;
   margin: 10px;
 }
 
+header {
+  height: 15vh;
+}
+
 footer {
   padding: 1vh;
-  background: linear-gradient(90deg, rgba(247,210,200,1) 0%, rgba(232,201,244,1) 47%, rgba(202,243,220,1) 100%);
-  border-radius: 1em 1em 0 0;
-  margin: 10px;
 }
 
 h1 {
@@ -62,18 +57,11 @@ aside {
   flex-direction: column;
 }
 
-.container {
+aside div {
   display: flex;
-  flex-wrap: wrap;
-  flex: 1;
-  padding: 10px;
-  justify-content: space-between;
-}
-
-.smallbox {
-  border: 3px solid purple;
-  flex: 0 32%;
-  margin-bottom: 2%;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center; /* horizontal centering */
 }
 
 .left {
@@ -88,17 +76,6 @@ aside {
   border-radius: 0.5em;
   width: 24vh;
   height: 24vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center; /* horizontal centering */
-}
-
-.left div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center; /* horizontal centering */
 }
 
 .left div p {
@@ -116,7 +93,21 @@ aside {
   background: rgba(255,255,255,0.2);
 }
 
-/* **GAME CORNERS** */
+/* *****TICTACTOE***** */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.smallbox {
+  border: 3px solid purple;
+  flex: 0 32%;
+  margin-bottom: 2%;
+}
+
 #box1 {
   border-radius: 1em 0 0 0;
 }
@@ -128,6 +119,21 @@ aside {
 }
 #box9 {
   border-radius: 0 0 1em 0;
+}
+/* ***************** */
+
+.reset {
+  padding: 0.6em;
+  text-align: center;
+  width: 19vh !important;
+  min-height: 6vh !important;
+  border-radius: 0.6em;
+}
+
+.instructions {
+  border: 0.5em solid #f7d2c8;
+  border-radius: 0.5em;
+  padding: 0.5em 1.5em;
 }
 
 /* **JAVASCRIPT** */
@@ -141,18 +147,6 @@ aside {
 .selectedRed {
   background-size: 100%;
   background-position: center;
-}
-
-.reset {
-  padding: 0.6em;
-  text-align: center;
-  width: 19vh !important;
-  min-height: 6vh !important;
-  border-radius: 0.6em;
-}
-
-#reset-text {
-  margin: auto;
 }
 
 .gradient-animate {
@@ -170,10 +164,4 @@ aside {
 	100% {
 		background-position: 0% 50%;
 	}
-}
-
-.instructions {
-  border: 0.5em solid #f7d2c8;
-  border-radius: 0.5em;
-  padding: 0.5em 1.5em;
 }
