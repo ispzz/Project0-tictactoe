@@ -72,7 +72,7 @@ $(document).ready(function() {
             checkWinner('Boots');
           }
         } else {
-        console.log('try another box');
+        alert('NO CHEATING!😾');
       }
 
     } else $('.reset').effect("shake");
