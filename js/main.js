@@ -82,6 +82,7 @@ $(document).ready(function() {
   //-RESET-&&-PLAY AGAIN-//
   $('.reset').click(function() {
     $('.smallbox').removeClass('selectedRed');
+    $('header, footer').removeClass('gradient-animate');
     $('.smallbox').css('background-image', '');
     $('.message').html(" ");
     $('.play-again').html(" ");
