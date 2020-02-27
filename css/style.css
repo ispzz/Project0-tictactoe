@@ -69,7 +69,6 @@ aside {
 
 .left div {
   border-radius: 1em;
-  background-color: blue;
   width: 24vh;
   height: 24vh;
   display: flex;
@@ -84,6 +83,15 @@ aside {
   margin: 0;
 }
 
+.socks-box {
+  background-color: white;
+}
+
+.boots-box {
+  background-color: white;
+}
+
+/* **JAVASCRIPT** */
 .message-div {
   background-color: red;
 }

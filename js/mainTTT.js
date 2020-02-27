@@ -30,6 +30,7 @@ $(document).ready(function() {
       } //END CURENT !""
       if (!board.includes("")) {
         console.log('tie??');
+        $('.message').html(`TIE!! TRY AGAIN`);
       }
     }//END FOR LOOP
   };// END checkWinner
@@ -50,6 +51,8 @@ $(document).ready(function() {
         player = false;
         board[indexX] = 'X';
         $(this).addClass('selectedRed');
+        $('.socks-box').css('background-color', 'red');
+        $('.boots-box').css('background-color', 'white');
         $('.message').html("It's player red's turn!");
         console.log(`it's player one's turn`); //test
         checkWinner('X');
@@ -57,6 +60,8 @@ $(document).ready(function() {
         player = true;
         board[indexX] = 'O';
         $(this).addClass('selectedBlue');
+        $('.boots-box').css('background-color', 'blue');
+        $('.socks-box').css('background-color', 'white');
         $('.message').html("It's player blue's turn!");
         console.log(`it's player two's turn`); //test
         checkWinner('O');
@@ -70,7 +75,7 @@ $(document).ready(function() {
   $('.reset').click(function() {
     $('.smallbox').removeClass('selectedRed');
     $('.smallbox').removeClass('selectedBlue');
-    $('p').html(" ");
+    $('.message').html(" ");
     board = ['','','','','','','','',''];
   });
 
