@@ -1,6 +1,14 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #0: Tic-Tac-Toe
 
+## Overview
+
 First project of the Software Engineering Immersive Course at General Assembly.
+
+The game begins once open and will state who has won.
+
+Live demo link: https://ispzz.github.io/tictactoe/
+
+### Technologies used
 
 The game was made using HTML, CSS, Jquery and Javascript.
 
