@@ -6,6 +6,6 @@ The game was made using HTML, CSS, Jquery and Javascript.
 
 ### How to play
 
-The play is automatically assigned a character(Socks or Boots) depending on who starts. The first play is Socks.
+The player is automatically assigned a character(Socks or Boots) depending on who starts. The first play is Socks.
 
 The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
