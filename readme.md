@@ -6,7 +6,11 @@ First project of the Software Engineering Immersive Course at General Assembly.
 
 The game begins once open and will state who has won.
 
-Live demo link: https://ispzz.github.io/tictactoe/
+![](images/game-screenshot.png)
+
+## Live demo link
+
+https://ispzz.github.io/Project0-tictactoe/
 
 ### Technologies used
 
@@ -14,11 +18,16 @@ The game was made using HTML, CSS, Jquery and Javascript.
 
 ### How to play
 
-The player is automatically assigned a character(Socks or Boots) depending on who starts. The first play is Socks.
+The player is automatically assigned a character(Socks or Boots) depending on who starts. The first play is always Socks.
 
 The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
 ## Wishlist
 
-- counter
-- player selection
+- Win counter for multiple games
+- Player Selection
+- A version where you can play against a simple AI
+
+## Known Bugs
+
+- Not mobile responsive
